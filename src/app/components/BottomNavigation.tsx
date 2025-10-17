@@ -76,7 +76,7 @@ export function BottomNavigation() {
 
   return (
     <nav className="fixed bottom-[18px] left-1/2 transform -translate-x-1/2 z-50">
-      <div className="bg-gradient-to-r from-slate-800/90 to-slate-700/90 backdrop-blur-lg border border-emerald-400/30 rounded-[45px] px-4 py-3 shadow-2xl shadow-emerald-500/10">
+      <div className="bg-red-900/20 backdrop-blur-xl border border-red-500/30 rounded-[45px] px-4 py-3 shadow-2xl shadow-red-500/20 backdrop-saturate-150">
         <div className="flex items-center space-x-2">
           {navItems.map((item) => (
             <button
@@ -88,8 +88,8 @@ export function BottomNavigation() {
                 transition-all duration-300 ease-in-out
                 group hover:scale-105
                 ${activeItem === item.id 
-                  ? 'bg-gradient-to-t from-emerald-600 to-emerald-500 text-white shadow-lg shadow-emerald-500/25' 
-                  : 'text-emerald-300 hover:text-emerald-200 hover:bg-emerald-500/10'
+                  ? 'bg-gradient-to-t from-red-600/80 to-red-500/80 text-white shadow-lg shadow-red-500/40 backdrop-blur-sm' 
+                  : 'text-red-200 hover:text-red-100 hover:bg-red-500/20 backdrop-blur-sm'
                 }
               `}
             >
@@ -101,7 +101,7 @@ export function BottomNavigation() {
               </div>
               <span className={`
                 text-xs font-semibold mt-1 transition-colors duration-200
-                ${activeItem === item.id ? 'text-white' : 'text-emerald-300/80'}
+                ${activeItem === item.id ? 'text-white' : 'text-red-200/90'}
               `}>
                 {item.label}
               </span>
@@ -110,8 +110,8 @@ export function BottomNavigation() {
         </div>
       </div>
       
-      {/* Glowing effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-green-500/20 rounded-[45px] blur-xl -z-10 animate-pulse"></div>
+      {/* Red glass glowing effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-red-500/30 to-rose-500/30 rounded-[45px] blur-xl -z-10 animate-pulse"></div>
     </nav>
   );
 }

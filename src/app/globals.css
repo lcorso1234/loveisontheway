@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #1e293b; /* slate-800 for gun metal gray */
+  --background: #7f1d1d; /* red-900 for deep red background */
   --foreground: #f1f5f9; /* slate-100 for contrast */
-  --accent-green: #10b981; /* emerald-500 */
-  --accent-green-light: #34d399; /* emerald-400 */
+  --accent-red: #dc2626; /* red-600 */
+  --accent-red-light: #f87171; /* red-400 */
   --waffle-brown: #92400e; /* amber-800 */
   --waffle-gold: #f59e0b; /* amber-500 */
   --waffle-cream: #fef3c7; /* amber-100 */
@@ -12,7 +12,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0f172a; /* slate-900 */
+    --background: #450a0a; /* red-950 */
     --foreground: #f8fafc; /* slate-50 */
   }
 }
@@ -21,8 +21,8 @@ body {
   background: linear-gradient(
     135deg,
     var(--background) 0%,
-    #334155 50%,
-    #0f172a 100%
+    #991b1b 50%,
+    #450a0a 100%
   );
   background-attachment: fixed;
   color: var(--foreground);
@@ -37,16 +37,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: #7f1d1d;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #10b981, #059669);
+  background: linear-gradient(180deg, #dc2626, #b91c1c);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #34d399, #10b981);
+  background: linear-gradient(180deg, #f87171, #dc2626);
 }
 
 /* Smooth scrolling */
@@ -131,4 +131,21 @@ input:focus {
 }
 button {
   cursor: pointer;
+}
+
+/* Retro funky animations */
+@keyframes retro-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 5px rgba(251, 191, 36, 0.5),
+      0 0 10px rgba(251, 191, 36, 0.3), 0 0 15px rgba(239, 68, 68, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 8px rgba(251, 191, 36, 0.8),
+      0 0 15px rgba(251, 191, 36, 0.5), 0 0 25px rgba(239, 68, 68, 0.4);
+  }
+}
+
+.retro-glow {
+  animation: retro-glow 2s ease-in-out infinite;
 }

@@ -33,9 +33,9 @@ export default function PodcastPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-red-900 via-red-800 to-red-950 relative overflow-hidden">
       {/* Background overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-slate-800/30"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-red-950/50 via-transparent to-red-900/30"></div>
       
       <main className="relative z-10 px-6 py-12 max-w-6xl mx-auto pb-32">
         {/* Header */}
