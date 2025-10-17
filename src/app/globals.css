@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+:root {
+  --background: #1e293b; /* slate-800 for gun metal gray */
+  --foreground: #f1f5f9; /* slate-100 for contrast */
+  --accent-green: #10b981; /* emerald-500 */
+  --accent-green-light: #34d399; /* emerald-400 */
+  --waffle-brown: #92400e; /* amber-800 */
+  --waffle-gold: #f59e0b; /* amber-500 */
+  --waffle-cream: #fef3c7; /* amber-100 */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a; /* slate-900 */
+    --foreground: #f8fafc; /* slate-50 */
+  }
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    var(--background) 0%,
+    #334155 50%,
+    #0f172a 100%
+  );
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", sans-serif;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #10b981, #059669);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #34d399, #10b981);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glow effects for enhanced visual appeal */
+.glow-green {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.glow-green:hover {
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+}
+
+/* Animated background stars effect */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.star {
+  animation: twinkle 2s infinite;
+}
+
+/* Text gradient animations */
+@keyframes gradient-x {
+  0%,
+  100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 3s ease infinite;
+}
+
+/* Patriotic color theme utilities */
+.text-patriot-red {
+  color: #dc2626; /* red-600 */
+}
+
+.text-patriot-blue {
+  color: #2563eb; /* blue-600 */
+}
+
+.bg-patriot-gradient {
+  background: linear-gradient(45deg, #dc2626, #ffffff, #2563eb);
+}
+
+/* utility for 18px radius */
+.rounded-18 {
+  border-radius: 18px;
+}
+
+/* Scroll snap helpers */
+.snap-y {
+  scroll-snap-type: y mandatory;
+}
+.snap-start > * {
+  scroll-snap-align: start;
+}
+
+/* Small subscription/input styles */
+input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+input:focus {
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.08);
+}
+button {
+  cursor: pointer;
+}
